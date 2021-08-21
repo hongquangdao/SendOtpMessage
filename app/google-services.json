@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "667633383720",
+    "project_id": "fir-messageclouding",
+    "storage_bucket": "fir-messageclouding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667633383720:android:9497c72118880229eab81d",
+        "android_client_info": {
+          "package_name": "com.example.firebasemessageclouding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667633383720-59452dspnb2bousedqljp68ka526vu82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkasaBZThpx50EM-Ox2dkBRGd4xQlwOOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667633383720-59452dspnb2bousedqljp68ka526vu82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667633383720:android:b0b2d0abc24f5fafeab81d",
+        "android_client_info": {
+          "package_name": "com.example.sendotpmessage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667633383720-59452dspnb2bousedqljp68ka526vu82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkasaBZThpx50EM-Ox2dkBRGd4xQlwOOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667633383720-59452dspnb2bousedqljp68ka526vu82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
