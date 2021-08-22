@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         binding.LinearLayoutPhoneNumber.setVisibility(View.VISIBLE);
         binding.LinearLayoutVerificationCode.setVisibility(View.GONE);
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 pd.dismiss();
-                Toast.makeText(MainActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Verification code sent", Toast.LENGTH_SHORT).show();
 
-                binding.codeSentDescription.setText("Please type the verification code we sent \n to "+ binding.editTextPhoneNumber.getText().toString().trim());
+                binding.codeSentDescription.setText("Please type the verification code we sent \n to " + binding.editTextPhoneNumber.getText().toString().trim());
             }
         };
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnVerificationCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String code = binding.editTextPhoneNumber.getText().toString().trim();
+                String code = binding.editTextVerificationCode.getText().toString().trim();
                 if (TextUtils.isEmpty(code)) {
                     Toast.makeText(MainActivity.this, "Please enter verification code", Toast.LENGTH_SHORT).show();
                 } else {
@@ -179,16 +179,16 @@ public class MainActivity extends AppCompatActivity {
                             String phone = user.getPhoneNumber();
                             // Update UI
                             Toast.makeText(MainActivity.this, "Logged In as" + phone, Toast.LENGTH_SHORT).show();
-
                             //start profile activity
-                            
+                            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             pd.dismiss();
                             Toast.makeText(MainActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                // The verification code entered was invalid
+                                Toast.makeText(MainActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

@@ -22,8 +22,6 @@ public class ProfileActivity extends AppCompatActivity {
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         checkUserStatus();
